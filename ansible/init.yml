@@ -1,0 +1,6 @@
+---
+- hosts: ansible_host
+  roles:
+    - {role: franklinkim.sudo}
+    - {role: willshersystems.sshd}
+    - {role: franklinkim.ufw}

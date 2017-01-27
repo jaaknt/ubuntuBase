@@ -1,0 +1,10 @@
+---
+- hosts: all
+
+  tasks:
+  - name: create user
+    user: name=ansible comment="Ansible" shell=/bin/bash state=present
+
+  - name: add key
+    authorized_key: user=ansible state=present unique=true key="{{ item.key }}"
+    with_items: "{{ ansible_user_keys }}"
