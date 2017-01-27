@@ -1,4 +1,11 @@
 # ubuntuBase
-Ubuntu 16.04 server to provision new servers with Ansible 
+Ubuntu 16.04 server to provision new servers with Ansible
 
-Target is to have secure Ubuntu 16.04 linux box in public Internet. The server main responsibility is to configure other linux boxes using Ansible scripts. 
+Target is to have secure Ubuntu 16.04 linux box in public Internet. The server main responsibility is to configure other linux boxes using Ansible scripts.
+
+    ```
+    mkdir -p /opt
+    cd /opt
+    git clone git@github.com:jaaknt/ubuntuBase.git
+    
+    ```

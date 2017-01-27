@@ -1,5 +1,6 @@
 ---
 - hosts: ansible_host
+  become: yes
   roles:
     - {role: franklinkim.sudo}
     - {role: willshersystems.sshd}
