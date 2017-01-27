@@ -3,6 +3,10 @@
   vars:
     ansible_user_keys:
     - key: "{{ lookup('file', './files/keys/ansible.pub') }}"
+    - key: "{{ lookup('file', './files/keys/id_rsa.pub') }}"
+    sudo_users:
+    - name: ansible
+      nopasswd: yes
 
   tasks:
   - name: create user
@@ -11,3 +15,6 @@
   - name: add key
     authorized_key: user=ansible state=present unique=true key="{{ item.key }}"
     with_items: "{{ ansible_user_keys }}"
+
+  roles:
+  - {role: franklinkim.sudo}

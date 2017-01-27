@@ -7,5 +7,16 @@ Target is to have secure Ubuntu 16.04 linux box in public Internet. The server m
     mkdir -p /opt
     cd /opt
     git clone git@github.com:jaaknt/ubuntuBase.git
-    
+
+    cd /opt/ubuntuBase/scripts
+    ./install.sh
+
+    cd /opt/ubuntuBase/ansible
+    ansible-playbook install -r requirements.yml
+    ansible-playbook -i hosts ansible_user.yml
+
+    cd /opt/ubuntuBase/ansible
+    su - ansible
+    ansible-playbook -i hosts init.yml
+
     ```
