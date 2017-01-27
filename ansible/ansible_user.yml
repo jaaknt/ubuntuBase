@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: local
   vars:
     ansible_user_keys:
     - key: "{{ lookup('file', './files/keys/ansible.pub') }}"

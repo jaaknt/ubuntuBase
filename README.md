@@ -15,8 +15,8 @@ Target is to have secure Ubuntu 16.04 linux box in public Internet. The server m
     ansible-playbook install -r requirements.yml
     ansible-playbook -i hosts ansible_user.yml
 
-    cd /opt/ubuntuBase/ansible
     su - ansible
+    cd /opt/ubuntuBase/ansible
     ansible-playbook -i hosts init.yml
 
     ```
