@@ -6,7 +6,7 @@ Target is to have secure Ubuntu 16.04 linux box in public Internet. The server m
     ```
     mkdir -p /opt
     cd /opt
-    git clone git@github.com:jaaknt/ubuntuBase.git
+    git clone https://github.com/jaaknt/ubuntuBase.git
 
     cd /opt/ubuntuBase/scripts
     ./install.sh
