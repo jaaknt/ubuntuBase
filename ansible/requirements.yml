@@ -1,5 +1,9 @@
 ---
-# from galaxy
+# for localhost
 - src: franklinkim.sudo
 - src: willshersystems.sshd
 - src: franklinkim.ufw
+
+# additional packages for jenkins server
+- src: geerlingguy.java
+- src: geerlingguy.jenkins

@@ -1,0 +1,5 @@
+[local]
+localhost     ansible_connection=local
+
+[jenkins]
+# add your jenkins server ip or hostname

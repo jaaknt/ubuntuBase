@@ -19,16 +19,17 @@ Target is to have secure Ubuntu 16.04 linux box in public Internet. The server m
    cd /opt/ubuntuBase/ansible
    ansible-galaxy install -r requirements.yml
    ```
-(4) Add manually your own/ansible public key and add ansible user with sudo privilege without password
+(4) Add manually your own/ansible public key and add ansible user with sudo privilege without password, copy hosts.example -> hosts file and make changes if necessary.
    ```bash
    vi files/keys/id_rsa.pub
    vi files/keys/ansible.pub
-   ansible-playbook -i hosts ansible_user.yml
+   cp hosts.example hosts
+   ansible-playbook -i hosts ansible_user.yml --limit local
    ```
 (5) Install ufw (only ssh allowed), sshd (no username/password login)
    ```bash
    su - ansible
    cd /opt/ubuntuBase/ansible
-   ansible-playbook -i hosts init.yml
+   ansible-playbook -i hosts common.yml
    ```
 (6) Logout from linux server and try ssh ansible@your.server
