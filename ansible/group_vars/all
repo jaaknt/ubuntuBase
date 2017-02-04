@@ -1,0 +1,4 @@
+---
+# all hosts variables default values
+java_flag: false
+jenkins_flag: false

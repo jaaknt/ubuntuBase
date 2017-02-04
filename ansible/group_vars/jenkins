@@ -1,2 +1,9 @@
+---
+# global variables values
 java_flag: true
 jenkins_flag: true
+
+# custom ufw
+ufw_rules:
+  - { port: 22,   rule: allow }
+  - { port: 8080, rule: allow }
