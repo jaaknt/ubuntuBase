@@ -1,8 +1,8 @@
 ---
-- hosts: local
+- hosts: all
   become: yes
   roles:
     - {role: willshersystems.sshd}
     - {role: franklinkim.ufw}
-    - {role: franklinkim.ufw}
-    - {role: franklinkim.ufw}
+    - {role: geerlingguy.java,      when: java_flag,    tags: java}
+    - {role: geerlingguy.jenkins,   when: jenkins_flag, tags: jenkins}

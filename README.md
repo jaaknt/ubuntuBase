@@ -21,7 +21,7 @@ Target is to have secure Ubuntu 16.04 linux box in public Internet. The server m
    ```
 (4) Add manually your own/ansible public key and add ansible user with sudo privilege without password, copy hosts.example -> hosts file and make changes if necessary.
    ```bash
-   vi files/keys/id_rsa.pub
+   vi files/keys/my.pub
    vi files/keys/ansible.pub
    cp hosts.example hosts
    ansible-playbook -i hosts ansible_user.yml --limit local
@@ -30,6 +30,8 @@ Target is to have secure Ubuntu 16.04 linux box in public Internet. The server m
    ```bash
    su - ansible
    cd /opt/ubuntuBase/ansible
-   ansible-playbook -i hosts common.yml
+   ansible-playbook -i hosts common.yml --limit local
    ```
 (6) Logout from linux server and try ssh ansible@your.server
+
+Next: [Add Jenkins server](./Jenkins.md)

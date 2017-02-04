@@ -3,7 +3,7 @@
   vars:
     ansible_user_keys:
     - key: "{{ lookup('file', './files/keys/ansible.pub') }}"
-    - key: "{{ lookup('file', './files/keys/id_rsa.pub') }}"
+    - key: "{{ lookup('file', './files/keys/my.pub') }}"
     sudo_users:
     - name: ansible
       nopasswd: yes
