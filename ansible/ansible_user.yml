@@ -12,9 +12,17 @@
   - name: create user
     user: name=ansible comment="Ansible" shell=/bin/bash state=present
 
-  - name: add key
+  - name: add ssh authorized_keys
     authorized_key: user=ansible state=present unique=true key="{{ item.key }}"
     with_items: "{{ ansible_user_keys }}"
+
+  - name: add ansible public key
+    copy: content="{{ lookup('file', './files/keys/ansible.pub') }}" dest=/home/ansible/id_rsa.pub mode=644 owner=ansible
+    when: ansible_keys_flag
+
+  - name: add ansible private key
+    copy: content="{{ lookup('file', './files/keys/ansible.priv') }}" dest=/home/ansible/id_rsa mode=600 owner=ansible
+    when: ansible_keys_flag
 
   roles:
   - {role: franklinkim.sudo}
