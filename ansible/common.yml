@@ -9,9 +9,11 @@
 
   tasks:
   - name: add jenkins public key
-    copy: content="{{ lookup('file', './files/keys/jenkisn.pub') }}" dest=/var/lib/jenkins/.ssh/id_rsa.pub mode=644 owner=ansible
+    copy: content="{{ lookup('file', './files/keys/jenkins.pub') }}" dest=/var/lib/jenkins/.ssh/id_rsa.pub mode=644 owner=jenkins group=jenkins
     when: jenkins_flag
+    tags: jenkins
 
   - name: add jenkins private key
-    copy: content="{{ lookup('file', './files/keys/jenkins.priv') }}" dest=/var/lib/jenkins/.ssh/id_rsa mode=600 owner=ansible
+    copy: content="{{ lookup('file', './files/keys/jenkins.priv') }}" dest=/var/lib/jenkins/.ssh/id_rsa mode=600 owner=jenkins group=jenkins
     when: jenkins_flag
+    tags: jenkins
