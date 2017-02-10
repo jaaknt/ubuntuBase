@@ -17,11 +17,11 @@
     with_items: "{{ ansible_user_keys }}"
 
   - name: add ansible public key
-    copy: content="{{ lookup('file', './files/keys/ansible.pub') }}" dest=/home/ansible/id_rsa.pub mode=644 owner=ansible
+    copy: content="{{ lookup('file', './files/keys/ansible.pub') }}" dest=/home/ansible/.ssh/id_rsa.pub mode=644 owner=ansible
     when: ansible_keys_flag
 
   - name: add ansible private key
-    copy: content="{{ lookup('file', './files/keys/ansible.priv') }}" dest=/home/ansible/id_rsa mode=600 owner=ansible
+    copy: content="{{ lookup('file', './files/keys/ansible.priv') }}" dest=/home/ansible/.ssh/id_rsa mode=600 owner=ansible
     when: ansible_keys_flag
 
   roles:
