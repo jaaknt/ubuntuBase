@@ -2,6 +2,7 @@
 - hosts: all
   become: yes
   roles:
+    - {role: kamaln7.swapfile,      when: swap_flag,    tags: swap}
     - {role: willshersystems.sshd,                      tags: sshd}
     - {role: franklinkim.ufw,                           tags: ufw}
     - {role: geerlingguy.java,      when: java_flag,    tags: java}

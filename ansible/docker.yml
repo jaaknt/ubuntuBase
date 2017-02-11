@@ -3,13 +3,28 @@
   become: yes
 
   tasks:
-  - name: install docker-engine 
+  - name: install docker-engine
     script: ./files/scripts/install_docker_ubuntu16.04.sh
     when: docker_flag
     tags: docker
 
 
-  - name: install docker-engine 
+  - name: install docker-engine
     script: ./files/scripts/install_docker_compose_ubuntu16.04.sh
+    when: docker_flag
+    tags: docker
+
+  - name: add docker group
+    group:
+      name: docker
+      state: present
+    when: docker_flag
+    tags: docker
+
+  - name: add jenkins user to docker group
+    user:
+      name: jenkins
+      groups: docker
+      append: yes
     when: docker_flag
     tags: docker
