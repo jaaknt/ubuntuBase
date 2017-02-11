@@ -3,6 +3,7 @@
 java_flag: false
 jenkins_flag: false
 ansible_keys_flag: false
+docker_flag: false
 
 # sshd
 sshd_PasswordAuthentication: no

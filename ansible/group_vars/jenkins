@@ -3,6 +3,7 @@
 java_flag: true
 jenkins_flag: true
 ansible_keys_flag: true
+docker_flag: true
 
 # custom ufw
 ufw_rules:
