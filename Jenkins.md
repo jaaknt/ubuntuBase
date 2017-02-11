@@ -14,9 +14,13 @@
    ```bash
    ansible-playbook -i hosts common.yml --limit jenkins
    ```
-5. Login to Jenkins server http://jenkins.server.your:8080/securityRealm/user/admin/configure (or http://jenkins.server.your:8080/securityRealm/addUser)
-6. Change admin user password
-7. Configure security http://jenkins.server.your:8080/configureSecurity/
+5. Install docker, docker-compose   
+   ```bash
+   ansible-playbook -i hosts docker.yml --limit jenkins
+   ```   
+6. Login to Jenkins server http://jenkins.server.your:8080/securityRealm/user/admin/configure (or http://jenkins.server.your:8080/securityRealm/addUser)
+7. Change admin user password
+8. Configure security http://jenkins.server.your:8080/configureSecurity/
    - Enable security
    - Jenkins’ own user database
    - Logged-in users can do anything

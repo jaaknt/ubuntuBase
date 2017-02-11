@@ -26,5 +26,5 @@
       name: jenkins
       groups: docker
       append: yes
-    when: docker_flag
+    when: docker_flag and jenkins_flag
     tags: docker

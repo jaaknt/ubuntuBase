@@ -7,3 +7,4 @@
 # additional packages for jenkins server
 - src: geerlingguy.java
 - src: geerlingguy.jenkins
+- src: kamaln7.swapfile
