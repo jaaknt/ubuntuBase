@@ -5,6 +5,7 @@ java_flag: true
 jenkins_flag: true
 ansible_keys_flag: true
 docker_flag: true
+nodejs_flag: true
 
 # custom ufw
 ufw_rules:
@@ -13,3 +14,7 @@ ufw_rules:
 
 # swap file
 swapfile_size: 4GB
+
+# nodejs
+nodejs_npm_global_packages: []
+  - { name: newman,    version: 3.4.3 }
