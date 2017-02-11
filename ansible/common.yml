@@ -9,6 +9,14 @@
     - {role: geerlingguy.jenkins,   when: jenkins_flag, tags: jenkins}
 
   tasks:
+  - name: add jenkins .ssh directory
+    file: /var/lib/jenkins/.ssh
+   state: directory
+   owner: jenkins
+   group: jenkins
+    mode: 0700
+     
+  tasks:
   - name: add jenkins public key
     copy: content="{{ lookup('file', './files/keys/jenkins.pub') }}" dest=/var/lib/jenkins/.ssh/id_rsa.pub mode=644 owner=jenkins group=jenkins
     when: jenkins_flag

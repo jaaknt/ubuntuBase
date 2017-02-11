@@ -1,5 +1,6 @@
 ---
 # all hosts variables default values
+swap_flag: false
 java_flag: false
 jenkins_flag: false
 ansible_keys_flag: false
