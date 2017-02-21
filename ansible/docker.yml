@@ -8,6 +8,10 @@
     when: docker_flag
     tags: docker
 
+  - name: fix ufw/docker conflict
+    copy: content="{{ lookup('file', './files/etc/daemon.json') }}" dest=/etc/docker/daemon.json mode=644 owner=docker group=docker
+    when: docker_flag
+    tags: docker
 
   - name: install docker-compose
     script: ./files/scripts/install_docker_compose_ubuntu16.04.sh
