@@ -6,6 +6,17 @@ jenkins_flag: false
 ansible_keys_flag: false
 docker_flag: false
 nodejs_flag: false
+postgres_flag: false
 
 # sshd
 sshd_PasswordAuthentication: no
+
+# postgresql
+postgresql_version: 9.6
+postgresql_pg_hba_custom: [
+  'host all all 0.0.0.0/0 md5'
+]
+
+postgresql_shared_preload_libraries: [
+  'pg_stat_statements'
+]

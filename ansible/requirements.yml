@@ -9,3 +9,6 @@
 - src: geerlingguy.jenkins
 - src: kamaln7.swapfile
 - src: geerlingguy.nodejs
+
+# postgres
+- src: ANXS.postgresql

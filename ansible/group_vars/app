@@ -1,0 +1,15 @@
+---
+# global variables values
+swap_flag: true
+java_flag: true
+ansible_keys_flag: true
+docker_flag: true
+postgres_flag: true
+
+# custom ufw
+ufw_rules:
+  - { port: 22,   rule: allow }
+  - { port: 8080, rule: allow }
+
+# swap file
+swapfile_size: 4GB

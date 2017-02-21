@@ -9,8 +9,13 @@
     tags: docker
 
 
-  - name: install docker-engine
+  - name: install docker-compose
     script: ./files/scripts/install_docker_compose_ubuntu16.04.sh
+    when: docker_flag
+    tags: docker
+
+  - name: install docker-machine
+    script: ./files/scripts/install_docker_machine_ubuntu16.04.sh
     when: docker_flag
     tags: docker
 
@@ -27,4 +32,12 @@
       groups: docker
       append: yes
     when: docker_flag and jenkins_flag
+    tags: docker
+
+  - name: add ansible user to docker group
+    user:
+      name: ansible
+      groups: docker
+      append: yes
+    when: docker_flag
     tags: docker
