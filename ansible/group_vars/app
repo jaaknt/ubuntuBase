@@ -10,6 +10,8 @@ postgres_flag: true
 ufw_rules:
   - { port: 22,   rule: allow }
   - { port: 8080, rule: allow }
+  - { port: 5432, rule: allow, from_ip: 80.235.46.10 }  
+  - { port: 5432, rule: allow, from_ip: 195.250.185.2 }
 
 # swap file
 swapfile_size: 4GB

@@ -11,4 +11,6 @@
 - src: geerlingguy.nodejs
 
 # postgres
-- src: ANXS.postgresql
+- src: https://github.com/ANXS/postgresql
+  name: ANXS.postgresql
+

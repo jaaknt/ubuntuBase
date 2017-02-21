@@ -2,12 +2,13 @@
 - hosts: all
   become: yes
   roles:
-    - {role: kamaln7.swapfile,      when: swap_flag,    tags: swap}
-    - {role: willshersystems.sshd,                      tags: sshd}
-    - {role: franklinkim.ufw,                           tags: ufw}
-    - {role: geerlingguy.java,      when: java_flag,    tags: java}
-    - {role: geerlingguy.jenkins,   when: jenkins_flag, tags: jenkins}
-    - {role: geerlingguy.nodejs,    when: nodejs_flag,  tags: nodejs}
+    - {role: kamaln7.swapfile,      when: swap_flag,     tags: swap}
+    - {role: willshersystems.sshd,                       tags: sshd}
+    - {role: franklinkim.ufw,                            tags: ufw}
+    - {role: geerlingguy.java,      when: java_flag,     tags: java}
+    - {role: geerlingguy.jenkins,   when: jenkins_flag,  tags: jenkins}
+    - {role: geerlingguy.nodejs,    when: nodejs_flag,   tags: nodejs}
+    - {role: ANXS.postgresql,       when: postgres_flag, tags: postgres}
 
   tasks:
   - name: add jenkins .ssh directory
@@ -17,6 +18,8 @@
       owner: jenkins
       group: jenkins
       mode: 0700
+    when: jenkins_flag
+    tags: jenkins
 
   - name: add jenkins public key
     copy: content="{{ lookup('file', './files/keys/jenkins.pub') }}" dest=/var/lib/jenkins/.ssh/id_rsa.pub mode=644 owner=jenkins group=jenkins
