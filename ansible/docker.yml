@@ -9,7 +9,7 @@
     tags: docker
 
   - name: fix ufw/docker conflict
-    copy: content="{{ lookup('file', './files/etc/daemon.json') }}" dest=/etc/docker/daemon.json mode=644 owner=docker group=docker
+    copy: content="{{ lookup('file', './files/etc/daemon.json') }}" dest=/etc/docker/daemon.json mode=644 owner=root group=root
     when: docker_flag
     tags: docker
 
