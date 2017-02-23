@@ -6,6 +6,7 @@ jenkins_flag: true
 ansible_keys_flag: true
 docker_flag: true
 nodejs_flag: true
+gradle_flag: true
 
 # custom ufw
 ufw_rules:
@@ -17,5 +18,5 @@ swapfile_size: 4GB
 
 # nodejs
 nodejs_install_npm_user: jenkins
-nodejs_npm_global_packages: 
+nodejs_npm_global_packages:
   - { name: newman,    version: 3.4.3 }

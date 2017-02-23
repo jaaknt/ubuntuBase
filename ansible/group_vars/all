@@ -7,6 +7,7 @@ ansible_keys_flag: false
 docker_flag: false
 nodejs_flag: false
 postgres_flag: false
+gradle_flag: false
 
 # sshd
 sshd_PasswordAuthentication: no
@@ -14,10 +15,12 @@ sshd_PasswordAuthentication: no
 # postgresql
 postgresql_version: 9.6
 postgresql_listen_addresses: '*'
-postgresql_pg_hba_custom: 
+postgresql_pg_hba_custom:
 - {type: host,  database: all, user: all, address: '0.0.0.0/0', method: 'md5', comment: 'IPv4 allow connections from everywhere' }
 
 
 postgresql_shared_preload_libraries: [
   'pg_stat_statements'
 ]
+
+gradle_version: 3.4

@@ -5,12 +5,13 @@ java_flag: true
 ansible_keys_flag: true
 docker_flag: true
 postgres_flag: true
+gradle_flag: true
 
 # custom ufw
 ufw_rules:
   - { port: 22,   rule: allow }
   - { port: 8080, rule: allow }
-  - { port: 5432, rule: allow, from_ip: 80.235.46.10 }  
+  - { port: 5432, rule: allow, from_ip: 80.235.46.10 }
   - { port: 5432, rule: allow, from_ip: 195.250.185.2 }
 
 # swap file
