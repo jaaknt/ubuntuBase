@@ -5,24 +5,23 @@
     url: "https://services.gradle.org/distributions/gradle-{{gradle_version}}-bin.zip"
     dest: "/tmp/gradle-{{gradle_version}}-bin.zip"
 
-- name: Unpack the compressed Gradle
-  command: mkdir -p /opt/gradle && unzip /tmp/gradle-{{gradle_version}}-bin.zip -d /opt/gradle
-
-- name: Set the permissions on the Gradle binary
+- name: add /opt/gradle directory
   file:
-    path: "/opt/gradle/gradle-{{gradle_version}}/bin"
+    path: /opt/gradle
     state: directory
+    owner: root
+    group: root
     mode: 0755
-    recurse: yes
 
-- name: Add the Gradle binary to the system path (/etc/environment)
-  lineinfile:
-    dest: /etc/environment
-    regexp: "{{item.regexp}}"
-    line: "{{item.line}}"
-    state: present
-  with_items:
-    - regexp: "^GRADLE_HOME=/opt/gradle/gradle-{{gradle_version}}"
-      line: "GRADLE_HOME=/opt/gradle/gradle-{{gradle_version}}"
-    - regexp: "^PATH=.*GRADLE_HOME.*"
-      line: "PATH=$PATH:$GRADLE_HOME/bin"
+- name: Unpack the compressed Gradle
+  unarchive:
+    src: /tmp/gradle-{{gradle_version}}-bin.zip
+    dest: /opt/gradle
+    remote_src: true
+
+- name: Add gradle directory to global $PATH.
+  template:
+    src: gradle.sh.j2
+    dest: /etc/profile.d/gradle.sh
+    mode: 0644
+
