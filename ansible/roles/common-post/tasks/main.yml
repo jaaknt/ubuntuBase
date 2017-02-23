@@ -1,0 +1,13 @@
+---
+- name: common utilites
+  include: utilities.yml
+
+- name: jenkins post installation tasks
+  include: jenkins-post.yml
+  when: jenkins_flag
+  tags: jenkins
+
+- name: install gradle
+  include: gradle.yml
+  when: gradle_flag
+  tags: gradle
