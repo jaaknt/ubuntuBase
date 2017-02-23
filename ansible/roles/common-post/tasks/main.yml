@@ -7,7 +7,17 @@
   when: jenkins_flag
   tags: jenkins
 
+- name: get gradle directory
+  stat:
+    path: /opt/gradle/gradle-{{gradle_version}}
+  register: gradle_result
+  tags: gradle
+
+#- debug:
+#    var: gradle_result  
+#  tags: gradle
+
 - name: install gradle
   include: gradle.yml
-  when: gradle_flag
+  when: gradle_flag and not gradle_result.stat.exists
   tags: gradle

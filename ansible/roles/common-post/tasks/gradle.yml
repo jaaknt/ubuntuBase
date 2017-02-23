@@ -25,3 +25,8 @@
     dest: /etc/profile.d/gradle.sh
     mode: 0644
 
+
+- name: remove downloaded zip
+  file:
+    path: "/tmp/gradle-{{gradle_version}}-bin.zip" 
+    state: absent
