@@ -10,7 +10,7 @@
    ```bash
    ansible-playbook -i hosts -u root ansible_user.yml --limit jenkins
    ```
-4. Install sshd, ufw, openjdk, jenkins, swapfile, nodejs   
+4. Install sshd, ufw, openjdk, jenkins, swapfile, nodejs, ansible, gradle, zip, unzip   
    ```bash
    ansible-playbook -i hosts common.yml --limit jenkins
    ```
