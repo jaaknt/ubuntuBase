@@ -3,6 +3,7 @@
 swap_flag: true
 java_flag: true
 jenkins_flag: true
+ansible_flag: true
 ansible_keys_flag: true
 docker_flag: true
 nodejs_flag: true

@@ -14,10 +14,15 @@
   tags: gradle
 
 #- debug:
-#    var: gradle_result  
+#    var: gradle_result
 #  tags: gradle
 
 - name: install gradle
   include: gradle.yml
   when: gradle_flag and not gradle_result.stat.exists
   tags: gradle
+
+- name: install ansible
+  include: ansible.yml
+  when: ansible_flag
+  tags: ansible

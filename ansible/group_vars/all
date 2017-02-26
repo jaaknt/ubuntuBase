@@ -3,11 +3,13 @@
 swap_flag: false
 java_flag: false
 jenkins_flag: false
+ansible_flag: false
 ansible_keys_flag: false
 docker_flag: false
 nodejs_flag: false
 postgres_flag: false
 gradle_flag: false
+ansible_flag: false
 
 # sshd
 sshd_PasswordAuthentication: no

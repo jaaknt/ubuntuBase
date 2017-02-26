@@ -3,7 +3,7 @@
 - name: Download gradle
   get_url:
     url: "https://services.gradle.org/distributions/gradle-{{gradle_version}}-bin.zip"
-    dest: "/tmp/gradle-{{gradle_version}}-bin.zip"
+    dest: /tmp/gradle-{{gradle_version}}-bin.zip
 
 - name: add /opt/gradle directory
   file:
@@ -28,5 +28,5 @@
 
 - name: remove downloaded zip
   file:
-    path: "/tmp/gradle-{{gradle_version}}-bin.zip" 
+    path: /tmp/gradle-{{gradle_version}}-bin.zip
     state: absent
