@@ -8,7 +8,7 @@ ansible_keys_flag: true
 docker_flag: true
 nodejs_flag: true
 gradle_flag: true
-letsencypt_flag: true
+letsencrypt_flag: true
 
 # custom ufw
 ufw_rules:

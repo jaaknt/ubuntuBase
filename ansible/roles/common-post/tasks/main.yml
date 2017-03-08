@@ -27,7 +27,7 @@
   when: ansible_flag
   tags: ansible
 
-- name: install letsencypt
-  include: letsencypt.yml
-  when: letsencypt_flag
-  tags: letsencypt
+- name: install letsencrypt
+  include: letsencrypt.yml
+  when: letsencrypt_flag
+  tags: letsencrypt

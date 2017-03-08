@@ -9,7 +9,7 @@ docker_flag: false
 nodejs_flag: false
 postgres_flag: false
 gradle_flag: false
-letsencypt_flag: false
+letsencrypt_flag: false
 
 # sshd
 sshd_PasswordAuthentication: no
