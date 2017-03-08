@@ -26,3 +26,8 @@
   include: ansible.yml
   when: ansible_flag
   tags: ansible
+
+- name: install letsencypt
+  include: letsencypt.yml
+  when: letsencypt_flag
+  tags: letsencypt

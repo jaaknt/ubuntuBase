@@ -1,0 +1,6 @@
+---
+- name: install letsencrypt
+  apt: name=letsencrypt state=present
+
+- name: install unzip
+  apt: name=unzip state=present
