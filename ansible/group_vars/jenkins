@@ -14,7 +14,8 @@ letsencrypt_flag: true
 ufw_rules:
   - { port: 22,   rule: allow }
   - { port: 8080, rule: allow }
-  - { port: 80,   rule: allow }
+  - { port: 443,  rule: allow }
+  - { port: 5000, rule: allow }
 
 # swap file
 swapfile_size: 4GB
