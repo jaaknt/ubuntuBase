@@ -16,6 +16,7 @@ ufw_rules:
   - { port: 8080, rule: allow }
   - { port: 443,  rule: allow }
   - { port: 5000, rule: allow }
+  - { interface: docker0, direction: in, rule: allow }
 
 # swap file
 swapfile_size: 4GB
