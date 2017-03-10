@@ -3,7 +3,7 @@
 1. Create droplet (Ubuntu 16.04.1) in DigitalOcean for Jenkins server
 2. Install python to jenkins server
    ```bash
-   sudo apt-get install python
+   sudo apt-get install python python-pip
    ```
 2. Copy droplet ip to /opt/ubuntuBase/ansible/hosts file
 3. Add ansible user with sudo privileges to jenkins server
