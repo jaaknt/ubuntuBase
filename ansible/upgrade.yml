@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+  - name: apt-get update && dist-upgrade 
+    apt:
+      update_cache: yes
+      upgrade: dist 
+
+
+#  - name: apt-get autoremove 
+#    apt:
+#      autoremove: yes 
+
