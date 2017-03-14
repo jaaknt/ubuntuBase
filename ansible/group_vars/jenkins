@@ -11,6 +11,7 @@ gradle_flag: true
 letsencrypt_flag: true
 
 # custom ufw
+ufw_default_forward_policy: ACCEPT
 ufw_rules:
   - { port: 22,   rule: allow }
   - { port: 8080, rule: allow }
