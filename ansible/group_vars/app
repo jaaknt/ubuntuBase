@@ -13,13 +13,17 @@ ufw_rules:
   - { port: 8080, rule: allow }
   - { port: 5432, rule: allow, from_ip: 80.235.46.10 }
   - { port: 5432, rule: allow, from_ip: 195.250.185.2 }
+  - { port: 5432, rule: allow, from_ip: 195.250.185.4 }
   - { port: 9000, rule: allow, from_ip: 80.235.46.10 }
   - { port: 9000, rule: allow, from_ip: 195.250.185.2 }
-  - { interface: docker0, direction: in, rule: allow }
+  - { port: 9000, rule: allow, from_ip: 195.250.185.4 }
   - { port: 8088, rule: allow, from_ip: 80.235.46.10 }
   - { port: 8088, rule: allow, from_ip: 195.250.185.2 }
+  - { port: 8088, rule: allow, from_ip: 195.250.185.4 }
   - { port: 8087, rule: allow, from_ip: 80.235.46.10 }
   - { port: 8087, rule: allow, from_ip: 195.250.185.2 }
+  - { port: 8087, rule: allow, from_ip: 195.250.185.4 }
+  - { interface: docker0, direction: in, rule: allow }
 
 # swap file
 swapfile_size: 4GB
