@@ -11,7 +11,7 @@ gradle_flag: true
 ufw_default_forward_policy: ACCEPT
 ufw_rules:
   - { port: 22,   rule: allow }
-  - { port: 8080, rule: allow }
+  - { port: 8081, rule: allow }
   - { port: 8087, rule: allow }
   - { port: 8088, rule: allow }
   - { port: 9000, rule: allow }
