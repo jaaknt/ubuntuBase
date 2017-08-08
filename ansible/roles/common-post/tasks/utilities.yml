@@ -4,3 +4,6 @@
 
 - name: install unzip
   apt: name=unzip state=present
+
+- name: install jq
+  apt: name=jq state=present

@@ -10,6 +10,9 @@ nodejs_flag: false
 postgres_flag: false
 gradle_flag: false
 letsencrypt_flag: false
+nginx_flag: false
+terraform_flag: false
+ufw_flag: false
 
 # sshd
 sshd_PasswordAuthentication: no
@@ -25,4 +28,4 @@ postgresql_shared_preload_libraries: [
   'pg_stat_statements'
 ]
 
-gradle_version: 3.4
+gradle_version: 4.1

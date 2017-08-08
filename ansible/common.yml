@@ -4,9 +4,11 @@
   roles:
     - {role: kamaln7.swapfile,      when: swap_flag,     tags: swap}
     - {role: willshersystems.sshd,                       tags: sshd}
-    - {role: franklinkim.ufw,                            tags: ufw}
+    - {role: franklinkim.ufw,       when: ufw_flag,      tags: ufw}
     - {role: geerlingguy.java,      when: java_flag,     tags: java}
     - {role: geerlingguy.jenkins,   when: jenkins_flag,  tags: jenkins}
     - {role: geerlingguy.nodejs,    when: nodejs_flag,   tags: nodejs}
     - {role: ANXS.postgresql,       when: postgres_flag, tags: postgres}
+    - {role: geerlingguy.nginx,     when: nginx_flag,    tags: nginx}
+    - {role: andrewrothstein.terraform, when: terraform_flag, tags: terraform}
     - {role: common-post                                           }

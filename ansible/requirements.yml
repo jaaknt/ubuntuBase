@@ -9,8 +9,9 @@
 - src: geerlingguy.jenkins
 - src: kamaln7.swapfile
 - src: geerlingguy.nodejs
+- src: geerlingguy.nginx
+- src: andrewrothstein.terraform
 
 # postgres
 - src: https://github.com/ANXS/postgresql
   name: ANXS.postgresql
-

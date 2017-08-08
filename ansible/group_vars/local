@@ -1,3 +1,5 @@
 ---
 # global variables values
+ufw_flag: true
 ansible_keys_flag: true
+terraform_flag: true
