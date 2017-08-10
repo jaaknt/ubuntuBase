@@ -1,6 +1,6 @@
 # Jenkins server
 
-1. Create droplet (Ubuntu 16.04.1) in DigitalOcean for Jenkins server
+1. Create droplet (Ubuntu 16.04.3) in DigitalOcean for Jenkins server (terraform script recommended)
 2. Install python to jenkins server
    ```bash
    sudo apt-get install python python-pip
@@ -10,7 +10,7 @@
    ```bash
    ansible-playbook -i hosts -u root ansible_user.yml --limit jenkins
    ```
-4. Install sshd, ufw, openjdk, jenkins, swapfile, nodejs, ansible, gradle, zip, unzip   
+4. Install sshd, ufw, openjdk, jenkins, swapfile, nodejs, ansible, gradle, zip, unzip, jq, ...   
    ```bash
    ansible-playbook -i hosts common.yml --limit jenkins
    ```

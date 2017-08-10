@@ -9,3 +9,31 @@ ufw_rules:
   - { port: 22,   rule: allow }
   - { port: 80,   rule: allow }
   - { port: 443,  rule: allow }
+
+nginx_vhosts: []
+  - listen: "80" # default: "80"
+    server_name: "{{ ansible_default_ipv4.address }}" # default: N/A
+    root: "/var/www/root" # default: N/A
+    index: "index.html index.htm" # default: "index.html index.htm"
+    filename: "http-server" # Can be used to set the filename of the vhost file.
+    extra_parameters: |
+    	location / {
+    		# First attempt to serve request as file, then
+    		# as directory, then fall back to displaying a 404.
+    		try_files $uri $uri/ =404;
+    	}
+      location /bo/ {
+        proxy_pass http://test.icefireteijorpwot1puon.eu:8070/bo/;
+      }
+      location /kyb/ {
+        proxy_pass http://test.icefireteijorpwot1puon.eu:9000/kyb/;
+      }
+      location /factoring/ {
+        proxy_pass http://test.icefireteijorpwot1puon.eu:8087/factoring/;
+      }
+      location /factoring-batch/ {
+         proxy_pass http://test.icefireteijorpwot1puon.eu:8086/factoring-batch/;
+      }
+      location /kyb-client/ {
+         proxy_pass http://test.icefireteijorpwot1puon.eu:8088/;
+      }
