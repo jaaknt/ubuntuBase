@@ -1,5 +1,6 @@
 ---
 # global variables values
+ansible_keys_flag: true
 nginx_flag: true
 ufw_flag: true
 
