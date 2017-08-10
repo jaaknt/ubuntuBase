@@ -13,7 +13,7 @@ Target is to have secure Ubuntu 16.04 linux box in public Internet. The server m
    ```
 (3) Install dependencies with ansible-galaxy  
    ```bash
-   cd /opt/ubuntuBase/ansible && ansible-galaxy install -r requirements.yml
+   cd /opt/ubuntuBase/ansible && sudo ansible-galaxy install --force --role-file requirements.yml
    ```
 (4) Add manually your own/ansible/jenkins public key and add ansible user with sudo privilege without password, copy hosts.example -> hosts file and make changes if necessary.
    ```bash
