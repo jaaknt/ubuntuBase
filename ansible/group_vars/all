@@ -14,11 +14,13 @@ nginx_flag: false
 terraform_flag: false
 ufw_flag: false
 prometheus_flag: false
+awscli_flag: false
 
 # sshd
 sshd_PasswordAuthentication: no
 
 # ansible
+ansible_ssh_user: ansible
 vault_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           38653061656263333265363264326266663830336631353166303132616166626235613661386332
