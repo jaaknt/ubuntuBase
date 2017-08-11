@@ -3,16 +3,12 @@
 ansible_keys_flag: true
 nginx_flag: true
 ufw_flag: true
-
-# custom ufw
-ufw_rules:
-  - { port: 22,   rule: allow }
-  - { port: 80,   rule: allow }
-  - { port: 443,  rule: allow }
-
+prometheus_flag: true
+ansible_flag: true
+awscli_flag: true
 
 nginx_remove_default_vhost: true
-nginx_vhosts: 
+nginx_vhosts:
   - listen: "80 default_server" # default: "80"
     server_name: "{{ ansible_default_ipv4.address }}" # default: N/A
     root: "/var/www/root" # default: N/A
@@ -39,3 +35,15 @@ nginx_vhosts:
       location /kyb-client/ {
         proxy_pass http://test.icefireteijorpwot1puon.eu:8088/;
       }
+
+# custom ufw
+ufw_rules:
+  - { port: 22,   rule: allow }
+  - { port: 80,   rule: allow }
+  - { port: 443,  rule: allow }
+
+# prometheus
+prometheus_components:
+   - "prometheus"
+   - "alertmanager"
+   - "node_exporter"

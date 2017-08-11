@@ -1,16 +1,16 @@
 ---
-# for localhost
+# packages
 - src: franklinkim.sudo
 - src: willshersystems.sshd
 - src: franklinkim.ufw
-
-# additional packages for jenkins server
 - src: geerlingguy.java
 - src: geerlingguy.jenkins
 - src: kamaln7.swapfile
 - src: geerlingguy.nodejs
 - src: geerlingguy.nginx
 - src: andrewrothstein.terraform
+- src: williamyeh.prometheus
+- src: ssilab.aws-cli
 
 # postgres
 - src: https://github.com/ANXS/postgresql

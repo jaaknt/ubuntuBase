@@ -6,27 +6,33 @@ jenkins_flag: true
 ansible_flag: true
 ansible_keys_flag: true
 docker_flag: true
-nodejs_flag: true
+# nodejs_flag: true
 gradle_flag: true
 letsencrypt_flag: true
-postgres_flag: true
+# postgres_flag: true
 
 # custom ufw
-ufw_default_forward_policy: ACCEPT
-ufw_rules:
-  - { port: 22,   rule: allow }
-  - { port: 8080, rule: allow }
-  - { port: 443,  rule: allow }
-  - { port: 5000, rule: allow }
-  - { port: 5432, rule: allow, from_ip: 80.235.46.10 }
-  - { port: 5432, rule: allow, from_ip: 195.250.185.2 }
-  - { port: 5432, rule: allow, from_ip: 195.250.185.4 }
-  - { interface: docker0, direction: in, rule: allow }
+# ufw_default_forward_policy: ACCEPT
+# ufw_rules:
+#   - { port: 22,   rule: allow }
+#   - { port: 8080, rule: allow }
+#   - { port: 443,  rule: allow }
+#   - { port: 5000, rule: allow }
+#   - { port: 5432, rule: allow, from_ip: 80.235.46.10 }
+#   - { port: 5432, rule: allow, from_ip: 195.250.185.2 }
+#   - { port: 5432, rule: allow, from_ip: 195.250.185.4 }
+#   - { interface: docker0, direction: in, rule: allow }
 
 # swap file
 swapfile_size: 4GB
 
 # nodejs
-nodejs_install_npm_user: jenkins
-nodejs_npm_global_packages:
-  - { name: newman,    version: 3.4.3 }
+# nodejs_install_npm_user: jenkins
+# nodejs_npm_global_packages:
+#  - { name: newman,    version: 3.4.3 }
+
+# prometheus
+prometheus_components:
+   - "prometheus"
+   - "alertmanager"
+   - "node_exporter"

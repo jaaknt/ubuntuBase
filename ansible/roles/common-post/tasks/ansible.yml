@@ -7,3 +7,15 @@
 
 - name: install ansible
   apt: name=ansible state=present update_cache=yes
+
+- name: Add ansible_vault password file location
+  lineinfile:
+    path: '/home/ansible/.bashrc'
+    regexp: '^export ANSIBLE_VAULT_PASSWORD_FILE='
+    line: 'export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_password'
+
+- name: Add ~/.vault_password file
+  template:
+    src: vault_password.j2
+    dest: /home/ansible/.vault_password
+    mode: 0600

@@ -1,4 +1,5 @@
 *.retry
 *.pub
 *.priv
+*.secret
 hosts

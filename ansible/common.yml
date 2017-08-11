@@ -11,4 +11,6 @@
     - {role: ANXS.postgresql,       when: postgres_flag, tags: postgres}
     - {role: geerlingguy.nginx,     when: nginx_flag,    tags: nginx}
     - {role: andrewrothstein.terraform, when: terraform_flag, tags: terraform}
+    - {role: williamyeh.prometheus, when: prometheus_flag, tags: prometheus}
+    - {role: ssilab.aws-cli,        when: awscli_flag,   tags: awscli}
     - {role: common-post                                           }
