@@ -9,6 +9,8 @@ docker_flag: true
 # nodejs_flag: true
 gradle_flag: true
 letsencrypt_flag: true
+prometheus_flag: true
+
 # postgres_flag: true
 
 # custom ufw
@@ -33,6 +35,4 @@ swapfile_size: 4GB
 
 # prometheus
 prometheus_components:
-   - "prometheus"
-   - "alertmanager"
    - "node_exporter"
