@@ -12,6 +12,6 @@
     - {role: geerlingguy.nginx,     when: nginx_flag,    tags: nginx}
     - {role: andrewrothstein.terraform, when: terraform_flag, tags: terraform}
     - {role: williamyeh.prometheus, when: prometheus_flag, tags: prometheus}
-    - {role: cadvisor,              when: docker_flag,   tags: cadvisor}
+    - {role: openmicroscopy.cadvisor, when: docker_flag, tags: cadvisor}
     - {role: ssilab.aws-cli,        when: awscli_flag,   tags: awscli}
     - {role: common-post                                           }

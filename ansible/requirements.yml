@@ -11,7 +11,7 @@
 - src: andrewrothstein.terraform
 - src: williamyeh.prometheus
 - src: ssilab.aws-cli
-- src: cadvisor
+- src: openmicroscopy.cadvisor
 
 # postgres
 - src: https://github.com/ANXS/postgresql
