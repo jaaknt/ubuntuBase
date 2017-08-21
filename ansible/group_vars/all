@@ -45,7 +45,7 @@ gradle_version: 4.1
 
 # prometheus
 prometheus_version: '1.7.1'
-prometheus_node_exporter_version: '0.13.0'
+prometheus_node_exporter_version: '0.14.0'
 prometheus_alertmanager_version: '0.8.0'
 
 # aws-cli

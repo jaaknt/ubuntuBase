@@ -32,3 +32,7 @@ ufw_rules:
 
 # swap file
 swapfile_size: 4GB
+
+# prometheus
+prometheus_components:
+   - "node_exporter"
