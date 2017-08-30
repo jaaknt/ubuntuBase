@@ -6,6 +6,7 @@ ufw_flag: true
 prometheus_flag: true
 ansible_flag: true
 awscli_flag: true
+docker_flag: true
 
 nginx_remove_default_vhost: true
 nginx_vhosts:

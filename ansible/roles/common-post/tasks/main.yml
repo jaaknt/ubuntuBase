@@ -2,15 +2,20 @@
 - name: common utilites
   include: utilities.yml
 
-- name: ufw post installation tasks
-  include: ufw-post.yml
+- name: docker post installation tasks
+  include: docker.yml
   when: docker_flag
-  tags: ufw
+  tags: docker
 
-- name: jenkins post installation tasks
-  include: jenkins-post.yml
-  when: jenkins_flag
-  tags: jenkins
+# - name: ufw post installation tasks
+#   include: ufw-post.yml
+#   when: docker_flag
+#   tags: ufw
+#
+# - name: jenkins post installation tasks
+#   include: jenkins-post.yml
+#   when: jenkins_flag
+#   tags: jenkins
 
 - name: get gradle directory
   stat:

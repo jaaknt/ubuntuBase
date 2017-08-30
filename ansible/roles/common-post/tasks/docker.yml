@@ -1,0 +1,15 @@
+
+- name: add docker group
+  group:
+    name: docker
+    state: present
+  when: docker_flag
+  tags: docker
+
+- name: add ansible user to docker group
+  user:
+    name: ansible
+    groups: docker
+    append: yes
+  when: docker_flag
+  tags: docker
