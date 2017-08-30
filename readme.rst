@@ -13,8 +13,8 @@ The server main responsibility is to configure other linux boxes using Ansible s
 #. Install dependencies with ansible-galaxy::
    cd /opt/ubuntuBase/ansible && sudo ansible-galaxy install --force --role-file requirements.yml
 
-#. Add manually your own/ansible/jenkins public key and add ansible user with sudo privilege without password,
-copy hosts.example -> hosts file and make changes if necessary.::
+#. Add manually your own/ansible/jenkins public key and add ansible user with sudo privilege without password, copy hosts.example -> hosts file and make changes if necessary.
+::
    cat ~/.ssh/id_rsa.pub         | ssh root@yourserver 'cat - > /opt/ubuntuBase/ansible/files/keys/my.pub'
    cat ~/.ssh/ansible/id_rsa     | ssh root@yourserver 'cat - > /opt/ubuntuBase/ansible/files/keys/ansible.priv'
    cat ~/.ssh/ansible/id_rsa.pub | ssh root@yourserver 'cat - > /opt/ubuntuBase/ansible/files/keys/ansible.pub'
@@ -23,9 +23,12 @@ copy hosts.example -> hosts file and make changes if necessary.::
    cp hosts.example hosts
    ansible-playbook -i hosts ansible_user.yml --limit local
 
-#. Install ufw (only ssh allowed), sshd (no username/password login)::
+#. Install ufw (only ssh allowed), sshd (no username/password login)
+::
    su - ansible && cd /opt/ubuntuBase/ansible && ansible-playbook -i hosts common.yml --limit local
 
-#. Logout from linux server and try ssh ansible@your.server
+#. Logout from linux server and try
+::
+   ssh ansible@your.server
 
 Next: [Add Jenkins server](./jenkins.rst)
