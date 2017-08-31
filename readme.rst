@@ -28,10 +28,10 @@ The server main responsibility is to configure other linux boxes using Ansible s
 
 5. Install ufw (only ssh allowed), sshd (no username/password login) ::
 
-   su - ansible && cd /opt/ubuntuBase/ansible && ansible-playbook -i hosts common.yml --limit local
+     su - ansible && cd /opt/ubuntuBase/ansible && ansible-playbook -i hosts common.yml --limit local
 
 6. Logout from linux server and try ::
 
-   ssh ansible@your.server
+     ssh ansible@your.server
 
-Next: [Add Jenkins server](./jenkins.rst)
+Next: `Add Jenkins server <./jenkins.rst>`_.
