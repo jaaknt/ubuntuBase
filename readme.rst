@@ -4,13 +4,13 @@ ubuntuBase
 Ubuntu 16.04 server to provision new servers with Ansible. Target is to have secure Ubuntu 16.04 linux box in public Internet.
 The server main responsibility is to configure other linux boxes using Ansible scripts.
 
-1. Download ubuntuBase from GitHub ::
+* Download ubuntuBase from GitHub ::
 
-   mkdir -p /opt && cd /opt && git clone https://github.com/jaaknt/ubuntuBase.git
+     mkdir -p /opt && cd /opt && git clone https://github.com/jaaknt/ubuntuBase.git
 
-2. Install ansible ::
+* Install ansible ::
 
-   cd /opt/ubuntuBase/scripts && ./install_ansible.sh
+     cd /opt/ubuntuBase/scripts && ./install_ansible.sh
 
 3. Install dependencies with ansible-galaxy ::
 
