@@ -12,9 +12,10 @@ gradle_flag: false
 letsencrypt_flag: false
 nginx_flag: false
 terraform_flag: false
-ufw_flag: false
-prometheus_flag: false
 awscli_flag: false
+prometheus_flag: false
+prometheus_alertmanager_flag: false
+prometheus_node_exporter_flag: false
 
 # sshd
 sshd_PasswordAuthentication: no
@@ -42,11 +43,6 @@ postgresql_shared_preload_libraries: [
 
 # gradle
 gradle_version: 4.1
-
-# prometheus
-prometheus_version: '1.7.1'
-prometheus_node_exporter_version: '0.14.0'
-prometheus_alertmanager_version: '0.8.0'
 
 # aws-cli
 aws_output_format: 'json'

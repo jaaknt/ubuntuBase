@@ -1,0 +1,5 @@
+---
+- name: install prometheus-node-exporter
+  apt: name=prometheus-node-exporter state=present
+  when: prometheus_node_exporter_flag
+  tags: prometheus

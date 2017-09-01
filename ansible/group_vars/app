@@ -6,34 +6,7 @@ ansible_keys_flag: true
 docker_flag: true
 postgres_flag: true
 gradle_flag: true
-prometheus_flag: true
-ufw_flag: false
-
-# custom ufw
-ufw_default_forward_policy: ACCEPT
-ufw_rules:
-  - { port: 22,   rule: allow }
-  - { port: 8081, rule: allow }
-  - { port: 8087, rule: allow }
-  - { port: 8088, rule: allow }
-  - { port: 9000, rule: allow }
-  - { port: 5432, rule: allow, from_ip: 80.235.46.10 }
-  - { port: 5432, rule: allow, from_ip: 195.250.185.2 }
-  - { port: 5432, rule: allow, from_ip: 195.250.185.4 }
-# - { port: 9000, rule: allow, from_ip: 80.235.46.10 }
-# - { port: 9000, rule: allow, from_ip: 195.250.185.2 }
-# - { port: 9000, rule: allow, from_ip: 195.250.185.4 }
-# - { port: 8088, rule: allow, from_ip: 80.235.46.10 }
-# - { port: 8088, rule: allow, from_ip: 195.250.185.2 }
-# - { port: 8088, rule: allow, from_ip: 195.250.185.4 }
-# - { port: 8087, rule: allow, from_ip: 80.235.46.10 }
-# - { port: 8087, rule: allow, from_ip: 195.250.185.2 }
-# - { port: 8087, rule: allow, from_ip: 195.250.185.4 }
-  - { interface: docker0, direction: in, rule: allow }
+prometheus_node_exporter_flag: true
 
 # swap file
 swapfile_size: 4GB
-
-# prometheus
-prometheus_components:
-   - "node_exporter"

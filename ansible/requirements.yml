@@ -2,15 +2,12 @@
 # packages
 - src: franklinkim.sudo
 - src: willshersystems.sshd
-- src: franklinkim.ufw
 - src: geerlingguy.java
 - src: geerlingguy.jenkins
 - src: kamaln7.swapfile
 - src: geerlingguy.nodejs
 - src: geerlingguy.nginx
 - src: andrewrothstein.terraform
-- src: williamyeh.prometheus
 - src: ssilab.aws-cli
 - src: openmicroscopy.cadvisor
-- src: geerlingguy.nginx
 - src: ANXS.postgresql

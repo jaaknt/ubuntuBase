@@ -7,16 +7,6 @@
   when: docker_flag
   tags: docker
 
-# - name: ufw post installation tasks
-#   include: ufw-post.yml
-#   when: docker_flag
-#   tags: ufw
-#
-# - name: jenkins post installation tasks
-#   include: jenkins-post.yml
-#   when: jenkins_flag
-#   tags: jenkins
-
 - name: get gradle directory
   stat:
     path: /opt/gradle/gradle-{{gradle_version}}
@@ -41,3 +31,8 @@
   include: letsencrypt.yml
   when: letsencrypt_flag
   tags: letsencrypt
+
+- name: install prometheus_components
+  include: prometheus.yml
+  when: prometheus_node_exporter_flag
+  tags: prometheus

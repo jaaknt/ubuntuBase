@@ -4,7 +4,6 @@
   roles:
     - {role: kamaln7.swapfile,      when: swap_flag,     tags: swap}
     - {role: willshersystems.sshd,                       tags: sshd}
-    - {role: franklinkim.ufw,       when: ufw_flag,      tags: ufw}
     - {role: geerlingguy.java,      when: java_flag,     tags: java}
     - {role: geerlingguy.jenkins,   when: jenkins_flag,  tags: jenkins}
     - {role: geerlingguy.nodejs,    when: nodejs_flag,   tags: nodejs}
