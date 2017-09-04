@@ -9,5 +9,6 @@
 - src: geerlingguy.nginx
 - src: andrewrothstein.terraform
 - src: ssilab.aws-cli
+- src: geerlingguy.docker
 - src: openmicroscopy.cadvisor
 - src: ANXS.postgresql
