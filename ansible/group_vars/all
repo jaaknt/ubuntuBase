@@ -66,4 +66,7 @@ aws_secret_access_key: !vault |
 # docker
 docker_edition: 'ce'
 docker_package_state: present
-docker_install_compose: true
+docker_install_compose: false
+
+# terraform
+terraform_ver: '0.10.3'
