@@ -70,3 +70,27 @@ docker_install_compose: false
 
 # terraform
 terraform_ver: '0.10.3'
+
+terraform_checksums:
+  darwin_amd64: sha256:6d7c51b8b8eee81b07c6b594077e0af95be518ed88b312bd3989c37b2924c2e6
+  freebsd_386: sha256:4a7638e045c5157236bab32737b74d61f513580ca74a7a6a161205be3036bc7c
+  freebsd_amd64: sha256:7910fa8d741e28fa46ea99ac5305c439b7c37f81d16738aec2d40a505c8b141b
+  freebsd_arm: sha256:b85a313297c42b06db61ceb5d7ba3c624ca20643ceb0aff76d0336a8ac70cdfb
+  linux_386: sha256:69a5601f1c15d55d9309c45913f9cb9f010a0fd4a7cd0f7a98ed03e58c7eb31e
+  linux_amd64: sha256:f316c6ff8b2abe257250d19cbe0e3cf745dedfa67b37bb4afaf95e0291efeade
+  linux_arm: sha256:ee768c98e6504177ad3c4dfa29604632015335cc62529473a01b71748a42669c
+  openbsd_386: sha256:2401ea2b7eedec78f33a380012b684939a31485b1f3be2ea2734756123bb9cb3
+  openbsd_amd64: sha256:94c470fbb3b0bbf6eba7ac5d19c8270bd5ab8eee74a73a7b82fb5946399e251d
+  solaris_amd64: sha256:128d9f74a195659d30dcfe4f9601d055b34c888e34a196342e5a35d6ef545063
+  windows_386: sha256:28411169c231625ecb25a291907eba68345b8bab838813e26f1ba938275c8abb
+  windows_amd64: sha256:df0e14d5428adfebd71e7cc12ecb05e7b770febd81e8444ee02084ace0d572d9
+
+terraform_providers:
+  - provider: aws
+    version: 0.1.4
+    checksums:
+      linux_amd64: sha256:530c25b88b2cf4c4c4e0b63b91fadd604e89ce58e6e780ea5f011cca029c5611 
+  - provider: digitalocean
+    version: 0.1.2
+    checksums:
+      linux_amd64: sha256:3a2041045d6e032af43fe667cef5ce11bd5ab84024d9aa7c78ec5edfcaa16dbc 
