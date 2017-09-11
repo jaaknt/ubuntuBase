@@ -5,7 +5,7 @@
     ansible_user_keys:
     - key: "{{ lookup('file', './files/keys/ansible.pub') }}"
     - key: "{{ lookup('file', './files/keys/my.pub') }}"
-    - key: "{{ lookup('file', './files/keys/ove.pub') }}"
+    #- key: "{{ lookup('file', './files/keys/ove.pub') }}"
     sudo_users:
     - name: ansible
       nopasswd: yes

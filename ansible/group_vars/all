@@ -13,9 +13,11 @@ letsencrypt_flag: false
 nginx_flag: false
 terraform_flag: false
 awscli_flag: false
-prometheus_flag: false
-prometheus_alertmanager_flag: false
 prometheus_node_exporter_flag: false
+prometheus_flag: false
+install_prometheus: false
+install_alertmanager: false
+install_blackbox_exporter: false
 
 # sshd
 sshd_PasswordAuthentication: no
@@ -89,8 +91,8 @@ terraform_providers:
   - provider: aws
     version: 0.1.4
     checksums:
-      linux_amd64: sha256:530c25b88b2cf4c4c4e0b63b91fadd604e89ce58e6e780ea5f011cca029c5611 
+      linux_amd64: sha256:530c25b88b2cf4c4c4e0b63b91fadd604e89ce58e6e780ea5f011cca029c5611
   - provider: digitalocean
     version: 0.1.2
     checksums:
-      linux_amd64: sha256:3a2041045d6e032af43fe667cef5ce11bd5ab84024d9aa7c78ec5edfcaa16dbc 
+      linux_amd64: sha256:3a2041045d6e032af43fe667cef5ce11bd5ab84024d9aa7c78ec5edfcaa16dbc

@@ -1,0 +1,12 @@
+---
+# global variables values
+docker_flag: true
+
+prometheus_flag: true
+install_prometheus: true
+install_blackbox_exporter: true
+install_alertmanager: true
+
+prometheus_node_exporter_flag: true
+
+swapfile_size: 4GB

@@ -12,3 +12,5 @@
 - src: geerlingguy.docker
 - src: openmicroscopy.cadvisor
 - src: ANXS.postgresql
+- src: Stouts.grafana
+- src: mkrakowitzer.ansible-prometheus
