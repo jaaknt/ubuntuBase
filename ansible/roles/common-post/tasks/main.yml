@@ -1,0 +1,38 @@
+---
+- name: common utilites
+  include: utilities.yml
+
+- name: docker post installation tasks
+  include: docker.yml
+  when: docker_flag
+  tags: docker
+
+- name: get gradle directory
+  stat:
+    path: /opt/gradle/gradle-{{gradle_version}}
+  register: gradle_result
+  tags: gradle
+
+#- debug:
+#    var: gradle_result
+#  tags: gradle
+
+- name: install gradle
+  include: gradle.yml
+  when: gradle_flag and not gradle_result.stat.exists
+  tags: gradle
+
+- name: install ansible
+  include: ansible.yml
+  when: ansible_flag
+  tags: ansible
+
+- name: install letsencrypt
+  include: letsencrypt.yml
+  when: letsencrypt_flag
+  tags: letsencrypt
+
+- name: install prometheus_components
+  include: prometheus.yml
+  when: prometheus_node_exporter_flag
+  tags: prometheus

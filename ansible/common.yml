@@ -13,6 +13,6 @@
     - {role: geerlingguy.nginx,     when: nginx_flag,    tags: nginx}
     - {role: andrewrothstein.terraform, when: terraform_flag, tags: terraform}
     - {role: ssilab.aws-cli,        when: awscli_flag,   tags: awscli}
-    - {role: Stouts.grafana,        when: grafane_flag,  tags: grafana}
-    - {role: mkrakowitzer.ansible-prometheus, when: prometheus_flag,  tags: prometheus}
+    - {role: Stouts.grafana,        when: grafana_flag,  tags: grafana}
+    - {role: mkrakowitzer.prometheus, when: prometheus_flag, tags: prometheus}
     - {role: common-post                                           }

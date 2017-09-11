@@ -1,12 +1,13 @@
 ---
 # global variables values
+swap_flag: true
 docker_flag: true
 
 prometheus_flag: true
 install_prometheus: true
 install_blackbox_exporter: true
 install_alertmanager: true
-
 prometheus_node_exporter_flag: true
+grafana_flag: true
 
 swapfile_size: 4GB

@@ -18,6 +18,7 @@ prometheus_flag: false
 install_prometheus: false
 install_alertmanager: false
 install_blackbox_exporter: false
+grafana_flag: false
 
 # sshd
 sshd_PasswordAuthentication: no
