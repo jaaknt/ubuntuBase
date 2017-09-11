@@ -23,7 +23,7 @@ install_blackbox_exporter: false
 sshd_PasswordAuthentication: no
 
 # ansible
-ansible_ssh_user: ansible
+ansible_vault_user: ansible
 vault_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           38653061656263333265363264326266663830336631353166303132616166626235613661386332
