@@ -89,6 +89,7 @@ terraform_providers:
 
 # prometheus
 # 1. blackbox_exporter
+path: /opt
 blackbox_exporter_modules:
   http_health:
     prober: http
@@ -125,3 +126,67 @@ blackbox_exporter_modules:
       - expect: "^:[^ ]+ 001"
   icmp:
     prober: icmp
+
+# prometheus
+prometheus_commandline_args:
+  config.file: "/prometheus-data/prometheus.yml"
+  alertmanager.url: "http://{{ alertmanager_ip }}:9093"
+  storage.local.path: "/prometheus-data/data"
+  web.console.libraries: "/etc/prometheus/console_libraries"
+  web.console.templates: "/etc/prometheus/consoles"
+
+prometheus_scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 10s
+    scrape_timeout:  10s
+    static_configs:
+      - targets: ['localhost:9090']
+  - job_name: 'node'
+    scrape_interval: 15s
+    static_configs:
+      - targets:
+        - "{{ ansible_default_ipv4.address }}:9100"
+  - job_name: 'cadvisor'
+    scrape_interval: 15s
+    static_configs:
+      - targets:
+        - localhost:9280
+  - job_name: 'blackbox'
+    scrape_interval: 15s
+    metrics_path: /probe
+    params:
+      module: [http_health]
+    static_configs:
+      - targets:
+        - test.icefireteijorpwot1puon.eu:8088/health
+        - test.icefireteijorpwot1puon.eu:8087/factoring/health
+        - test.icefireteijorpwot1puon.eu:8086/factoring-batch/health
+        - test.icefireteijorpwot1puon.eu:9000/kyb/health
+        - test.icefireteijorpwot1puon.eu:8070/bo/health
+        labels:
+          environment: 'development'
+      - targets:
+        - teijo.vuola.io/health
+        - teijo.vuola.io/factoring/health
+        - teijo.vuola.io/factoring-batch/health
+        - teijo.vuola.io/kyb/health
+#        - teijo.vuola.io/bo/health
+        labels:
+          environment: 'test'
+      - targets:
+        - https://op-laskulaina.fi/health
+        - https://op-laskulaina.fi/factoring/health
+        - https://op-laskulaina.fi/factoring-batch/health
+        - https://op-laskulaina.fi/kyb/health
+#        - https://op-laskulaina.fi/bo/health
+        labels:
+          environment: 'production'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__address__]
+        target_label: instance
+      - source_labels: []
+        target_label: __address__
+        replacement: "{{ ansible_default_ipv4.address }}:9115"
+
