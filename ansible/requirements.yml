@@ -1,6 +1,6 @@
 ---
 # packages
-- src: franklinkim.sudo
+- src: weareinteractive.sudo
 - src: willshersystems.sshd
 - src: geerlingguy.java
 - src: geerlingguy.jenkins

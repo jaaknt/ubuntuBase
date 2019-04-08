@@ -27,4 +27,4 @@
     when: ansible_keys_flag
 
   roles:
-  - {role: franklinkim.sudo}
+  - {role: weareinteractive.sudo}
